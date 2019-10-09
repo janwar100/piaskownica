@@ -7,4 +7,7 @@ Points:
   * thirs point
 
 ## Another section - second level
-bla bla bla
+
+  1.  Apple
+  2.  Orange
+  3.  Carrot

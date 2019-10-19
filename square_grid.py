@@ -13,8 +13,9 @@ def show_square(grid_resolution=(2, 2), angle=0):
     """Draw Cartesian grid in a square [-1,1]x[1,1] rotated be given angle
     Parameters
     ----------
-    grid_resolution
-        number of cells in any direction (X, Y)
+    grid_resolution : int or tuple
+        number of cells in X and Y direction. If single number is given then
+        mesh resolution in both directions is the same
     angle
         rotation angle in degrees
     """

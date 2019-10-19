@@ -10,7 +10,7 @@ import math
 
 
 def show_square(grid_resolution=(2, 2), angle=0):
-    """Draw Cartesian grid in a square [-1,1]x[1,1] rotated be given angle
+    """Draw Cartesian grid in a square [-1,1]x[1,1] rotated by given angle
     Parameters
     ----------
     grid_resolution : int or tuple

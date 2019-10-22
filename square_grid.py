@@ -9,7 +9,7 @@ import matplotlib
 import math
 
 
-def show_square(grid_resolution=(2, 2), angle=0):
+def show_square(grid_resolution=(4, 4), angle=0):
     """Draw Cartesian grid in a square [-1,1]x[1,1] rotated by given angle
     Parameters
     ----------
@@ -21,7 +21,7 @@ def show_square(grid_resolution=(2, 2), angle=0):
     """
     try:
         res = grid_resolution*2
-        resolution = res[0:2]
+        resolution = res[0:4]
     except TypeError:
         resolution = (grid_resolution,)*2
         
@@ -29,12 +29,12 @@ def show_square(grid_resolution=(2, 2), angle=0):
     angle = np.deg2rad(angle)
     c, s = math.cos(angle), math.sin(angle)
     rot = np.array([[c, -s], [s, c]])
-    x = np.linspace(-1.0, 1.0, resolution[0]+1, dtype=np.float64)
-    y = np.linspace(-1.0, 1.0, resolution[1]+1, dtype=np.float64)
+    x = np.linspace(-2.0, 2.0, resolution[0]+1, dtype=np.float64)
+    y = np.linspace(-2.0, 2.0, resolution[1]+1, dtype=np.float64)
     xx, yy = np.meshgrid(x, y)
     coordinates = np.dot(np.c_[xx.flatten(), yy.flatten()], rot.T)
     square_mesh = matplotlib.collections.QuadMesh(*resolution, coordinates,
-                                                  edgecolors='black')
+                                                  edgecolors='red')
     ax.add_collection(square_mesh)
     ax.autoscale()
     ax.axis('equal')

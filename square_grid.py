@@ -20,7 +20,7 @@ def show_square(grid_resolution=(4, 4), angle=0):
         rotation angle in degrees
     """
     try:
-        res = grid_resolution*2
+        res = grid_resolution
         resolution = res[0:4]
     except TypeError:
         resolution = (grid_resolution,)*2
@@ -29,7 +29,7 @@ def show_square(grid_resolution=(4, 4), angle=0):
     angle = np.deg2rad(angle)
     c, s = math.cos(angle), math.sin(angle)
     rot = np.array([[c, -s], [s, c]])
-    x = np.linspace(-2.0, 2.0, resolution[0]+1, dtype=np.float64)
+    x = np.linspace(-3.0, 3.0, resolution[0]+1, dtype=np.float64)
     y = np.linspace(-2.0, 2.0, resolution[1]+1, dtype=np.float64)
     xx, yy = np.meshgrid(x, y)
     coordinates = np.dot(np.c_[xx.flatten(), yy.flatten()], rot.T)
